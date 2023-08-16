@@ -28,7 +28,7 @@
     }
   }
 }
-/* Стилі для бургер кнопки */
+/* Burger button */
 .burger-button {
   cursor: pointer;
 }
@@ -37,24 +37,22 @@
   fill: white;
 }
 
-/* Стилі для меню, що з'являється при кліку на бургер кнопку */
+/* Modile menu */
 .mobile-menu {
   background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
-  //height: 100%;
   width: 100%;
   overflow: auto;
   z-index: 9;
-  ////
   opacity: 0;
   height: 0;
   visibility: hidden;
   transition: opacity 0.55s, height 40s, visibility 0.3s;
 }
 
-/* Стилі для посилань в меню */
+/* Mobile menu links */
 .mobile-menu a {
   padding: 32px 0px 32px 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -75,18 +73,18 @@
   }
 }
 
-/* Стилі для бургер-кнопки для екранів більше 1024px */
+/* Hide button */
 .burger-button {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  /* Стилі для меню для екранів менше 1024px */
+  /* Hide button */
   .header_menu {
     display: none;
   }
 
-  /* Показати бургер-кнопку для екранів менше 1024px */
+  /* Show burger button for screens smaller than 1024px */
   .burger-button {
     display: block;
   }
