@@ -1,0 +1,26 @@
+.field_date_teaser{
+  opacity: 0.3;
+  color: white;
+}
+.other_teaser_item:not(:last-child){
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  &:first-child{
+    @media (max-width: 976px) {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .important_teaser_item{
+    h1{
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .other_teaser_item{
+    flex-direction: column-reverse;
+  }
+}

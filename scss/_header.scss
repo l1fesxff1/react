@@ -1,0 +1,101 @@
+.closed-burger{
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.header_left{
+  .logoimg{
+    margin-right: 40px;
+  }
+  .header_menu{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    li:not(:last-child){
+      margin-right: 40px;
+    }
+  }
+}
+.block_social{
+  padding-right: 16px;
+  .menu_social_links{
+    li{
+      a{
+        margin-left: 16px;
+      }
+    }
+  }
+}
+/* Стилі для бургер кнопки */
+.burger-button {
+  cursor: pointer;
+}
+
+.burger-button svg {
+  fill: white;
+}
+
+/* Стилі для меню, що з'являється при кліку на бургер кнопку */
+.mobile-menu {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //height: 100%;
+  width: 100%;
+  overflow: auto;
+  z-index: 9;
+  ////
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  transition: opacity 0.55s, height 40s, visibility 0.3s;
+}
+
+/* Стилі для посилань в меню */
+.mobile-menu a {
+  padding: 32px 0px 32px 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #ffffff;
+  &:hover{
+    border-left: 4px solid #121212;
+  }
+  display: block;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.6);
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  &:before{
+    padding-right: 15px;
+  }
+}
+
+/* Стилі для бургер-кнопки для екранів більше 1024px */
+.burger-button {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  /* Стилі для меню для екранів менше 1024px */
+  .header_menu {
+    display: none;
+  }
+
+  /* Показати бургер-кнопку для екранів менше 1024px */
+  .burger-button {
+    display: block;
+  }
+  body.menu-open {
+    .mobile-menu{
+      height: 100%;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.55s, visibility 0.3s;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.first_slider{
+  &_item{
+    padding: 0px 28px;
+    min-height: 516px;
+    border-left: 1px solid #e5e5e5;
+    @media (max-width: 480px) {
+      border: none;
+    }
+  }
+}
+.slider_field_date{
+  padding: 16px 0px 10px;
+}
+.slider_title{
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+.slick-current{
+  .first_slider_item{
+    border-left: none;
+  }
+}
+.slider2{
+  .slider_image{
+    max-width: 284px;
+    width: 100%;
+    height: 152px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.slider3{
+  color: white;
+  .slider_image{
+    max-width: 284px;
+    width: 100%;
+    height: 152px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .slider_title{
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+  }
+  .slider_body{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 200;
+    padding-top: 10px;
+  }
+}

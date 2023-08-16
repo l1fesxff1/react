@@ -1,0 +1,44 @@
+.arsip{
+  @media (max-width: 767px) {
+    background: #f5f6f8;
+    padding: 20px;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+}
+.archive_field_date{
+  padding: 0 0 6px;
+}
+.archive_title{
+  //font-size: 20px;
+  //line-height: 30px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #121212;
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+.archive{
+  border-bottom: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  text-align: left;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  padding-left: 24px;
+  margin-top: 0px;
+  @media (max-width: 767px) {
+    border-left: 0px solid #e5e5e5;
+    padding-left: 0;
+  }
+  &:first-child{
+    padding-top: 10px;
+  }
+  &:last-child{
+    border-bottom: 0px;
+    padding-bottom: 10px;
+  }
+}
