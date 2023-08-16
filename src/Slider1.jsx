@@ -47,7 +47,6 @@ const Slider1 = ({ blockContent6 }) => {
                         {item.field_date && (<p className={"slider_field_date field_date"}>{item.field_date}</p>)}
                         <p className={"slider_title "}>{stripTags(item.title_1)}</p>
                         {item.body && (<p className={"slider_body cut_text"}>{stripTags(item.body)}</p>)}
-                            {/*{item.title_1}*/}
                     </div>
                 ))}
             </Slider>
