@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
-import Header from "./Header.jsx";
-import Banner from "./Banner.jsx";
-import Teasers from "./Teasers.jsx";
-import Slider1 from "./Slider1.jsx";
-import StaticBlock from "./StaticBlock.jsx";
-import LatestArticles from "./LatestArticles.jsx";
-import Archives from "./Archives.jsx";
-import TestimonialsImg from "./TestimonialsImg.jsx";
-import Testimonials from "./Testimonials.jsx";
+import Header from "./components/header/Header.jsx";
+import Banner from "./components/header/Banner.jsx";
+import Teasers from "./components/header/Teasers.jsx";
+import Slider1 from "./components/main_block/Slider1.jsx";
+import StaticBlock from "./components/main_block/StaticBlock.jsx";
+import LatestArticles from "./components/main_block/LatestArticles.jsx";
+import Archives from "./components/bottom_block/Archives.jsx";
+import TestimonialsImg from "./components/bottom_block/TestimonialsImg.jsx";
+import Testimonials from "./components/bottom_block/Testimonials.jsx";
 
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
