@@ -9,7 +9,8 @@ import Archives from "./components/bottom_block/Archives.jsx";
 import TestimonialsImg from "./components/bottom_block/TestimonialsImg.jsx";
 import Testimonials from "./components/bottom_block/Testimonials.jsx";
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+import { ApiUrls, fetchData } from './apiService';
+
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
@@ -38,121 +39,91 @@ const App = () => {
     const [blockContent12, setBlockContent12] = useState({});
     const [blockContent13, setBlockContent13] = useState([]);
 
-
-    const apiUrlMenu = `${backendUrl}/jsonapi/menu_link_content/menu_link_content`;
-    const apiUrlBlock1 = `${backendUrl}/jsonapi/block_content/basic/d6ee7696-ee2d-47f1-a4ba-c6b6a2ac583c?resourceVersion=id%3A1&include=field_image`;
-    const apiUrlBlock2 = `${backendUrl}/jsonapi/block_content/social_links/da13c4ff-fea5-48e6-bedb-7ede57c8f29d?resourceVersion=id%3A2&include=field_social_links.field_icon_svg`;
-    const apiUrlBlock3 = `${backendUrl}/jsonapi/node/page`;
-    const apiUrlBlock4 = `${backendUrl}/blog-articles-first?_format=json`;
-    const apiUrlBlock5 = `${backendUrl}/blog-articles-second?_format=json`;
-    const apiUrlBlock6 = `${backendUrl}/design-tutorials-first?_format=json`;
-    const apiUrlBlock7 = `${backendUrl}/jsonapi/block_content/w_full_block/cf972415-4ba6-4d47-ae43-11798f4b8e2a?resourceVersion=id%3A3&include=field_image`;
-    const apiUrlBlock8 = `${backendUrl}/editors-choice?_format=json`;
-    const apiUrlBlock9 = `${backendUrl}/jsonapi/block_content/w_full_block/121c2905-1aad-4a35-b001-249f99f464e1?resourceVersion=id%3A4&include=field_image`;
-    const apiUrlBlock10 = `${backendUrl}/latest-articles?_format=json`;
-    const apiUrlBlock11 = `${backendUrl}/archives?_format=json`;
-    const apiUrlBlock12 = `${backendUrl}/jsonapi/block_content/basic/07440139-1de0-44ab-98d8-9a7b437245db?resourceVersion=id%3A5&include=field_image`;
-    const apiUrlBlock13 = `${backendUrl}/testimonials?_format=json`;
-
     useEffect(() => {
+            fetchData(ApiUrls.menu)
+                .then((data) => {
+                    setMenuLinks(data.data);
+                })
+                .catch((error) => console.error('Error fetching menu links:', error));
 
-        fetch(apiUrlMenu)
-            .then((response) => response.json())
-            .then((data) => {
-                setMenuLinks(data.data);
-            })
-            .catch((error) => console.error("Error fetching menu links:", error));
+            fetchData(ApiUrls.block1)
+                .then((data) => {
+                    setBlockContent1(data.data);
+                })
+                .catch((error) => console.error('Error fetching block content 1:', error));
 
-        fetch(apiUrlBlock1)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent1(data.data);
-            })
-            .catch((error) => console.error("Error fetching block content 1:", error));
+            fetchData(ApiUrls.block2)
+                .then((data) => {
+                    setBlockContent2(data.data);
+                })
+                .catch((error) => console.error('Error fetching block content 2:', error));
 
-        fetch(apiUrlBlock2)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent2(data.data);
-            })
-            .catch((error) => console.error("Error fetching block content 2:", error));
+            fetchData(ApiUrls.block3)
+                .then((data) => {
+                    setBlockContent3(data.data[0]);
+                })
+                .catch((error) => console.error('Error fetching block content 3:', error));
 
-        fetch(apiUrlBlock3)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent3(data.data[0]);
-            })
-            .catch((error) => console.error("Error fetching block content 3:", error));
+            fetchData(ApiUrls.block4)
+                .then((data) => {
+                    setBlockContent4(data[0]);
+                })
+                .catch((error) => console.error('Error fetching block content 4:', error));
 
-        fetch(apiUrlBlock4)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent4(data[0]);
-            })
-        .catch((error) => console.error("Error fetching block content 4:", error));
+            fetchData(ApiUrls.block5)
+                .then((data) => {
+                    setBlockContent5(data);
+                })
+                .catch((error) => console.error('Error fetching block content 5:', error));
 
-        fetch(apiUrlBlock5)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent5(data);
-            })
-            .catch((error) => console.error("Error fetching block content 5:", error));
+            fetchData(ApiUrls.block6)
+                .then((data) => {
+                    setBlockContent6(data);
+                })
+                .catch((error) => console.error('Error fetching block content 6:', error));
 
-        fetch(apiUrlBlock6)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent6(data);
-            })
-            .catch((error) => console.error("Error fetching block content 6:", error));
+            fetchData(ApiUrls.block7)
+                .then((data) => {
+                    setBlockContent7(data.data);
+                })
+                .catch((error) => console.error('Error fetching block content 7:', error));
 
-        fetch(apiUrlBlock7)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent7(data.data);
-            })
-            .catch((error) => console.error("Error fetching block content 7:", error));
+            fetchData(ApiUrls.block8)
+                .then((data) => {
+                    setBlockContent8(data);
+                })
+                .catch((error) => console.error('Error fetching block content 8:', error));
 
-        fetch(apiUrlBlock8)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent8(data);
-            })
-            .catch((error) => console.error("Error fetching block content 8:", error));
+            fetchData(ApiUrls.block9)
+                .then((data) => {
+                    setBlockContent9(data.data);
+                })
+                .catch((error) => console.error('Error fetching block content 9:', error));
 
-        fetch(apiUrlBlock9)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent9(data.data);
-            })
-            .catch((error) => console.error("Error fetching block content 9:", error));
+            fetchData(ApiUrls.block10)
+                .then((data) => {
+                    setBlockContent10(data);
+                })
+                .catch((error) => console.error('Error fetching block content 10:', error));
 
-        fetch(apiUrlBlock10)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent10(data);
-            })
-            .catch((error) => console.error("Error fetching block content 10:", error));
+            fetchData(ApiUrls.block11)
+                .then((data) => {
+                    setBlockContent11(data);
+                })
+                .catch((error) => console.error('Error fetching block content 11:', error));
 
-        fetch(apiUrlBlock11)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent11(data);
-            })
-            .catch((error) => console.error("Error fetching block content 11:", error));
+            fetchData(ApiUrls.block12)
+                .then((data) => {
+                    setBlockContent12(data.data);
+                })
+                .catch((error) => console.error('Error fetching block content 12:', error));
 
-        fetch(apiUrlBlock12)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent12(data.data);
-            })
-            .catch((error) => console.error("Error fetching block content 12:", error));
+            fetchData(ApiUrls.block13)
+                .then((data) => {
+                    setBlockContent13(data);
+                })
+                .catch((error) => console.error('Error fetching block content 13:', error));
 
-        fetch(apiUrlBlock13)
-            .then((response) => response.json())
-            .then((data) => {
-                setBlockContent13(data);
-            })
-            .catch((error) => console.error("Error fetching block content 12:", error));
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setShowBackToTop(true);
@@ -165,7 +136,7 @@ const App = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    });
+    },[]);
 
 
     return (
