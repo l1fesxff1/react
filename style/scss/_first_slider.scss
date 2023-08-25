@@ -1,4 +1,6 @@
+/* Styles for the slider component */
 .first_slider{
+  /* Styles for individual items within the slider */
   &_item{
     padding: 0px 28px;
     min-height: 516px;
@@ -8,21 +10,26 @@
     }
   }
 }
+/* Style for date in the slider */
 .slider_field_date{
   padding: 16px 0px 10px;
 }
+/* Style for title in the slider */
 .slider_title{
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.3px;
   font-weight: 600;
 }
+/* Styles to hide the border on the left */
 .slick-current{
   .first_slider_item{
     border-left: none;
   }
 }
+/* Styles for the second type of slider */
 .slider2{
+  /* Style for images within the slider */
   .slider_image{
     max-width: 284px;
     width: 100%;
@@ -31,8 +38,10 @@
     object-position: center;
   }
 }
+/* Styles for the third type of slider */
 .slider3{
   color: white;
+  /* Style for images within the slider */
   .slider_image{
     max-width: 284px;
     width: 100%;
@@ -40,12 +49,14 @@
     object-fit: cover;
     object-position: center;
   }
+  /* Style for title within the slider */
   .slider_title{
     font-size: 22px;
     line-height: 30px;
     letter-spacing: 0.3px;
     font-weight: 600;
   }
+  /* Style for body text within the slider */
   .slider_body{
     font-size: 18px;
     line-height: 28px;

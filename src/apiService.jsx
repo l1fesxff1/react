@@ -1,17 +1,29 @@
+// Get the backend URL from the environment variables using VITE_BACKEND_URL
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+// Function to fetch data from a given URL
 export async function fetchData(url) {
     try {
+        // Send a GET request to the provided URL
         const response = await fetch(url);
+
+        // Check if the response status is not OK
         if (!response.ok) {
             throw new Error(`Network response was not ok: ${response.status}`);
         }
+        // Parse the response body as JSON
         const data = await response.json();
+
+        // Return the fetched data
         return data;
     } catch (error) {
+        // Log and re-throw any errors that occur during the fetch process
         console.error('Error fetching data:', error);
         throw error;
     }
 }
+
+// Object containing API URLs
 export const ApiUrls = {
     menu: `${backendUrl}/jsonapi/menu_link_content/menu_link_content`,
     block1: `${backendUrl}/jsonapi/block_content/basic/d6ee7696-ee2d-47f1-a4ba-c6b6a2ac583c?resourceVersion=id%3A1&include=field_image`,

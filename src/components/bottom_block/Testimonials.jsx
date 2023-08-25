@@ -1,14 +1,23 @@
+// Import necessary components and hooks from React
 import React, { useState } from "react";
+
+// Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+
+// Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+// Function to parse an attribute from an HTML string
 const parseAttribute = (string, tag, attribute) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(string, 'text/html');
     const element = doc.querySelector(tag);
     return element ? element.getAttribute(attribute) : null;
 };
+
+// Testimonials component to display a list of testimonials
 const Testimonials = ({ blockContent13 }) => {
     return (
         <div className={"wrapper_testimonials pad20"}>
@@ -25,4 +34,5 @@ const Testimonials = ({ blockContent13 }) => {
     );
 };
 
+// Export the Testimonials component as the default export
 export default Testimonials;

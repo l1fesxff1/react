@@ -1,8 +1,15 @@
+// Import necessary components and hooks from React
 import React, { useState } from "react";
+
+// Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+
+// Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+// LatestArticles component that displays a list of articles
 const LatestArticles = ({ blockContent10 }) => {
     return (
             <div className={"wrapper_articles"}>
@@ -25,4 +32,5 @@ const LatestArticles = ({ blockContent10 }) => {
     );
 };
 
+// Export the LatestArticles component as the default export
 export default LatestArticles;

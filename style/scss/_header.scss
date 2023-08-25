@@ -1,12 +1,16 @@
+/* Styles for the closed burger menu */
 .closed-burger{
   display: flex;
   justify-content: flex-end;
   padding: 20px;
 }
+/* Styles for the left part of the header */
 .header_left{
+  /* Styles for the logo image */
   .logoimg{
     margin-right: 40px;
   }
+  /* Styles for the header menu */
   .header_menu{
     font-size: 12px;
     line-height: 20px;
@@ -18,9 +22,12 @@
     }
   }
 }
+/* Styles for the social links block */
 .block_social{
   padding-right: 16px;
+  /* Styles for the social links menu */
   .menu_social_links{
+    /* Styles for each social link item */
     li{
       a{
         margin-left: 16px;
@@ -28,16 +35,16 @@
     }
   }
 }
-/* Burger button */
+/* Styles for the burger button */
 .burger-button {
   cursor: pointer;
 }
-
+/* SVG icon styles */
 .burger-button svg {
   fill: white;
 }
 
-/* Modile menu */
+/* Styles for the mobile menu */
 .mobile-menu {
   background: #ffffff;
   position: fixed;
@@ -52,11 +59,12 @@
   transition: opacity 0.55s, height 40s, visibility 0.3s;
 }
 
-/* Mobile menu links */
+/* Styles for links within the mobile menu */
 .mobile-menu a {
   padding: 32px 0px 32px 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 4px solid #ffffff;
+  /* Styles for link hover effect */
   &:hover{
     border-left: 4px solid #121212;
   }
@@ -68,26 +76,28 @@
   color: black;
   text-decoration: none;
   transition: color 0.3s linear;
+  /* Styles for the before pseudo-element */
   &:before{
     padding-right: 15px;
   }
 }
 
-/* Hide button */
+/* Hide burger button by default */
 .burger-button {
   display: none;
 }
-
+/* Media query for screens up to 1024px */
 @media (max-width: 1024px) {
-  /* Hide button */
+  /* Hide the regular header menu */
   .header_menu {
     display: none;
   }
 
-  /* Show burger button for screens smaller than 1024px */
+  /* Show the burger button for screens smaller than 1024px */
   .burger-button {
     display: block;
   }
+  /* Styles for open burger menu */
   body.menu-open {
     .mobile-menu{
       height: 100%;

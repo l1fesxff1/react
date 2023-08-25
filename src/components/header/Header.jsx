@@ -1,9 +1,16 @@
+// Import necessary components and hooks from React
 import React, {useState} from "react";
 
+// Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
+// Header component that displays a navigation menu and social links
 const Header = ({menuLinks, blockContent1, blockContent2}) => {
+
+    // State to track the status of the burger menu
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+
+    // Function to toggle the burger menu and apply a class to the body for styling
     const handleBurgerMenuToggle = () => {
         setBurgerMenuOpen(!burgerMenuOpen);
         document.body.classList.toggle("menu-open");
@@ -64,7 +71,6 @@ const Header = ({menuLinks, blockContent1, blockContent2}) => {
 
 
                 {/* Mobile menu */}
-                {/*{burgerMenuOpen && (*/}
                     <div className={`mobile-menu ${burgerMenuOpen ? "show" : ""}`}>
                         <div className={"closed-burger flex justify-end"}>
                             <button className="burger-button" onClick={handleBurgerMenuToggle}>
@@ -98,10 +104,10 @@ const Header = ({menuLinks, blockContent1, blockContent2}) => {
                             }
                         </ul>
                     </div>
-                {/*// )}*/}
             </div>
         </header>
     );
 };
 
+// Export the Header component as the default export
 export default Header;

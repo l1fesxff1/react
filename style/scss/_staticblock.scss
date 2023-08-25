@@ -1,15 +1,22 @@
+/* Wrapper for the static block section */
 .wrapper_static_block{
+  /* Padding for desktop screens */
   padding: 0 80px;
+  /* Media query for screens up to 976px */
   @media (max-width: 976px) {
     padding: 0 20px;
   }
+  /* Styles for the left side of the static block */
   .static_block_left{
+    /* Media query for screens up to 976px */
     @media (max-width: 976px){
+      /* Center alignment for smaller screens */
       align-items: center;
       text-align: center;
     }
   }
 }
+/* Styles for the static block title */
 .static_block_title{
   font-size: 63px;
   line-height: 68px;
@@ -23,6 +30,7 @@
     margin-bottom: 15px;
   }
 }
+/* Styles for the static block text */
 .static_block_text{
   font-size: 27px;
   line-height: 38px;
@@ -33,6 +41,7 @@
     line-height: 25px;
   }
 }
+/* Styles for the static block button */
 .static_block_button{
   padding: 20px 0;
   border: 1px solid white;
@@ -43,13 +52,17 @@
   max-width: 350px;
   width: 100%;
 }
+/* Styles for the second variant of the static block */
 .static_block2{
+  /* Styles for the static block text in the second variant */
   .static_block_text{
     opacity: 1;
   }
+  /* Styles for the static block button in the second variant */
   .static_block_button{
     background-color: #ffd335;
     border-color: black;
+    /* Hover effect */
     &:hover{
       color: #ffd335;
       background-color: black;

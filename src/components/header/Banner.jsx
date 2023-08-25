@@ -1,7 +1,12 @@
+// Import the necessary components and functions from React
 import React, { useState } from "react";
+
+// Function to strip HTML tags from the given input
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+
+// Banner component that displays content from blockContent3
 const Banner = ({ blockContent3 }) => {
     return (
         <div>
@@ -18,4 +23,5 @@ const Banner = ({ blockContent3 }) => {
     );
 };
 
+// Export the Banner component as the default export
 export default Banner;

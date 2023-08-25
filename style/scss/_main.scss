@@ -1,15 +1,22 @@
+/* Apply 'Poppins' font to the entire document */
 html, body{
   font-family: 'Poppins', sans-serif;
 }
+
+/* Set background color for the body */
 body{
   background-color: #ececec;
 }
+
+/* Apply styles when the menu is open */
 body.menu-open {
   overflow: hidden;
   .back-to-top{
+    /* Hide the back-to-top button when the menu is open */
     display: none;
   }
 }
+/* Style for date field */
 .field_date{
   font-size: 11px;
   line-height: 11px;
@@ -20,6 +27,8 @@ body.menu-open {
     line-height: 15px;
   }
 }
+
+/* Style for section titles */
 .title_block{
   border-bottom: 0px solid #222222;
   font-size: 16px;
@@ -33,6 +42,8 @@ body.menu-open {
     margin-bottom: 28px;
   }
 }
+
+/* Style for small synopsis text */
 .small_synopsis{
   font-size: 15px;
   line-height: 23px;
@@ -43,6 +54,8 @@ body.menu-open {
     line-height: 28px;
   }
 }
+
+/* Apply ellipsis and limit text to 5 lines */
 .cut_text{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -50,12 +63,16 @@ body.menu-open {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+
+/* Apply padding of 20px to elements with this class */
 .pad20{
   padding: 0 20px;
   @media (max-width: 767px) {
     padding: 0;
   }
 }
+
+/* Style for back-to-top button */
 .back-to-top{
   position: fixed;
   bottom: 20px;
@@ -66,10 +83,13 @@ body.menu-open {
   cursor: default;
   transition: opacity 0.3s ease-in-out;
   &.show{
+    /* Show the button when the class 'show' is applied */
     opacity: 1;
     cursor: pointer;
   }
 }
+
+/* Style for social link icons */
 .social_link_icon{
   width: 22px;
 }

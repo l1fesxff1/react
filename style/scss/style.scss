@@ -1,8 +1,16 @@
+/* Apply Tailwind base styles */
 @tailwind base;
+
+/* Apply Tailwind component styles */
 @tailwind components;
+
+/* Apply Tailwind utility styles */
 @tailwind utilities;
 
+/* Import the Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap');
+
+/* Import additional styles from separate files */
 @import "header";
 @import "main";
 @import "teasers";

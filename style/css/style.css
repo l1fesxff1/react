@@ -1,13 +1,24 @@
+/* Apply Tailwind base styles */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
 @tailwind base;
+/* Apply Tailwind component styles */
 @tailwind components;
+/* Apply Tailwind utility styles */
 @tailwind utilities;
+/* Import the Poppins font from Google Fonts */
+/* Import additional styles from separate files */
+/* Styles for the closed burger menu */
 .closed-burger {
   display: flex;
   justify-content: flex-end;
   padding: 20px;
 }
 
+/* Styles for the left part of the header */
+.header_left {
+  /* Styles for the logo image */
+  /* Styles for the header menu */
+}
 .header_left .logoimg {
   margin-right: 40px;
 }
@@ -22,23 +33,29 @@
   margin-right: 40px;
 }
 
+/* Styles for the social links block */
 .block_social {
   padding-right: 16px;
+  /* Styles for the social links menu */
+}
+.block_social .menu_social_links {
+  /* Styles for each social link item */
 }
 .block_social .menu_social_links li a {
   margin-left: 16px;
 }
 
-/* Burger button */
+/* Styles for the burger button */
 .burger-button {
   cursor: pointer;
 }
 
+/* SVG icon styles */
 .burger-button svg {
   fill: white;
 }
 
-/* Modile menu */
+/* Styles for the mobile menu */
 .mobile-menu {
   background: #ffffff;
   position: fixed;
@@ -53,11 +70,12 @@
   transition: opacity 0.55s, height 40s, visibility 0.3s;
 }
 
-/* Mobile menu links */
+/* Styles for links within the mobile menu */
 .mobile-menu a {
   padding: 32px 0px 32px 32px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-left: 4px solid #ffffff;
+  /* Styles for link hover effect */
   display: block;
   font-size: 32px;
   line-height: 42px;
@@ -66,6 +84,7 @@
   color: black;
   text-decoration: none;
   transition: color 0.3s linear;
+  /* Styles for the before pseudo-element */
 }
 .mobile-menu a:hover {
   border-left: 4px solid #121212;
@@ -74,20 +93,22 @@
   padding-right: 15px;
 }
 
-/* Hide button */
+/* Hide burger button by default */
 .burger-button {
   display: none;
 }
 
+/* Media query for screens up to 1024px */
 @media (max-width: 1024px) {
-  /* Hide button */
+  /* Hide the regular header menu */
   .header_menu {
     display: none;
   }
-  /* Show burger button for screens smaller than 1024px */
+  /* Show the burger button for screens smaller than 1024px */
   .burger-button {
     display: block;
   }
+  /* Styles for open burger menu */
   body.menu-open .mobile-menu {
     height: 100%;
     opacity: 1;
@@ -95,21 +116,26 @@
     transition: opacity 0.55s, visibility 0.3s;
   }
 }
+/* Apply 'Poppins' font to the entire document */
 html, body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Set background color for the body */
 body {
   background-color: #ececec;
 }
 
+/* Apply styles when the menu is open */
 body.menu-open {
   overflow: hidden;
 }
 body.menu-open .back-to-top {
+  /* Hide the back-to-top button when the menu is open */
   display: none;
 }
 
+/* Style for date field */
 .field_date {
   font-size: 11px;
   line-height: 11px;
@@ -123,6 +149,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Style for section titles */
 .title_block {
   border-bottom: 0px solid #222222;
   font-size: 16px;
@@ -139,6 +166,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Style for small synopsis text */
 .small_synopsis {
   font-size: 15px;
   line-height: 23px;
@@ -152,6 +180,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Apply ellipsis and limit text to 5 lines */
 .cut_text {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -160,6 +189,7 @@ body.menu-open .back-to-top {
   -webkit-box-orient: vertical;
 }
 
+/* Apply padding of 20px to elements with this class */
 .pad20 {
   padding: 0 20px;
 }
@@ -169,6 +199,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Style for back-to-top button */
 .back-to-top {
   position: fixed;
   bottom: 20px;
@@ -180,21 +211,28 @@ body.menu-open .back-to-top {
   transition: opacity 0.3s ease-in-out;
 }
 .back-to-top.show {
+  /* Show the button when the class 'show' is applied */
   opacity: 1;
   cursor: pointer;
 }
 
+/* Style for social link icons */
 .social_link_icon {
   width: 22px;
 }
 
+/* Styles for the date in teaser sections */
 .field_date_teaser {
+  /* Lower opacity for a subtle effect */
   opacity: 0.3;
   color: white;
 }
 
+/* Styles for non-last teaser items */
 .other_teaser_item:not(:last-child) {
+  /* Border at the bottom to separate items */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Special styling for the first item */
 }
 @media (max-width: 976px) {
   .other_teaser_item:not(:last-child):first-child {
@@ -204,15 +242,25 @@ body.menu-open .back-to-top {
 }
 
 @media (max-width: 767px) {
+  /* Styles for important teaser items */
+  .important_teaser_item {
+    /* Adjust font size and line height for smaller screens */
+  }
   .important_teaser_item h1 {
     font-size: 24px;
     line-height: 32px;
   }
 }
 @media (max-width: 450px) {
+  /* Styles for other teaser items in small screens */
   .other_teaser_item {
+    /* Reverse column direction for better stacking */
     flex-direction: column-reverse;
   }
+}
+/* Styles for the slider component */
+.first_slider {
+  /* Styles for individual items within the slider */
 }
 .first_slider_item {
   padding: 0px 28px;
@@ -225,10 +273,12 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Style for date in the slider */
 .slider_field_date {
   padding: 16px 0px 10px;
 }
 
+/* Style for title in the slider */
 .slider_title {
   font-size: 18px;
   line-height: 24px;
@@ -236,10 +286,15 @@ body.menu-open .back-to-top {
   font-weight: 600;
 }
 
+/* Styles to hide the border on the left */
 .slick-current .first_slider_item {
   border-left: none;
 }
 
+/* Styles for the second type of slider */
+.slider2 {
+  /* Style for images within the slider */
+}
 .slider2 .slider_image {
   max-width: 284px;
   width: 100%;
@@ -248,8 +303,12 @@ body.menu-open .back-to-top {
   object-position: center;
 }
 
+/* Styles for the third type of slider */
 .slider3 {
   color: white;
+  /* Style for images within the slider */
+  /* Style for title within the slider */
+  /* Style for body text within the slider */
 }
 .slider3 .slider_image {
   max-width: 284px;
@@ -271,21 +330,30 @@ body.menu-open .back-to-top {
   padding-top: 10px;
 }
 
+/* Wrapper for the static block section */
 .wrapper_static_block {
+  /* Padding for desktop screens */
   padding: 0 80px;
+  /* Media query for screens up to 976px */
+  /* Styles for the left side of the static block */
 }
 @media (max-width: 976px) {
   .wrapper_static_block {
     padding: 0 20px;
   }
 }
+.wrapper_static_block .static_block_left {
+  /* Media query for screens up to 976px */
+}
 @media (max-width: 976px) {
   .wrapper_static_block .static_block_left {
+    /* Center alignment for smaller screens */
     align-items: center;
     text-align: center;
   }
 }
 
+/* Styles for the static block title */
 .static_block_title {
   font-size: 63px;
   line-height: 68px;
@@ -304,6 +372,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for the static block text */
 .static_block_text {
   font-size: 27px;
   line-height: 38px;
@@ -317,6 +386,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for the static block button */
 .static_block_button {
   padding: 20px 0;
   border: 1px solid white;
@@ -327,23 +397,45 @@ body.menu-open .back-to-top {
   width: 100%;
 }
 
+/* Styles for the second variant of the static block */
+.static_block2 {
+  /* Styles for the static block text in the second variant */
+  /* Styles for the static block button in the second variant */
+}
 .static_block2 .static_block_text {
   opacity: 1;
 }
 .static_block2 .static_block_button {
   background-color: #ffd335;
   border-color: black;
+  /* Hover effect */
 }
 .static_block2 .static_block_button:hover {
   color: #ffd335;
   background-color: black;
 }
 
+/* Styles for the latest articles section */
+.latest_articles {
+  /* Styles for the first set of articles */
+  /* Styles for the article image */
+  /* Styles for the article body */
+  /* Styles for the second set of articles */
+}
+.latest_articles .articles1 {
+  /* Wrapper for the articles grid */
+}
 .latest_articles .articles1 .wrapper_articles {
+  /* Grid layout */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
+  /* Media query for screens up to 1440px */
+  /* Media query for screens up to 767px */
+  /* Styles for the article image */
+  /* Styles for the article body */
+  /* Styles for the article title */
 }
 @media (max-width: 1440px) {
   .latest_articles .articles1 .wrapper_articles {
@@ -386,6 +478,8 @@ body.menu-open .back-to-top {
 }
 .latest_articles .article_body {
   text-align: left;
+  /* Styles for the article date */
+  /* Styles for the article title */
 }
 .latest_articles .article_body .article_date {
   padding: 0 0 10px;
@@ -400,6 +494,9 @@ body.menu-open .back-to-top {
     line-height: 23px;
   }
 }
+.latest_articles .articles2 {
+  /* Styles for an individual article */
+}
 .latest_articles .articles2 .article {
   border-bottom: 0px solid #e5e5e5;
   text-align: left;
@@ -408,6 +505,9 @@ body.menu-open .back-to-top {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  /* Styles for the article image */
+  /* Styles for the article body */
+  /* Media query for screens up to 600px */
 }
 .latest_articles .articles2 .article .article_img {
   width: 41.6%;
@@ -427,6 +527,8 @@ body.menu-open .back-to-top {
 .latest_articles .articles2 .article .article_body {
   width: 58.3%;
   padding: 0 10px;
+  /* Styles for the article title */
+  /* Styles for the article text */
 }
 .latest_articles .articles2 .article .article_body .article_title {
   font-size: 24px;
@@ -439,6 +541,9 @@ body.menu-open .back-to-top {
     line-height: 24px;
   }
 }
+.latest_articles .articles2 .article .article_body .article_text {
+  /* Media query for screens up to 767px */
+}
 @media (max-width: 767px) {
   .latest_articles .articles2 .article .article_body .article_text {
     display: none;
@@ -448,6 +553,8 @@ body.menu-open .back-to-top {
   .latest_articles .articles2 .article {
     margin-top: 25px;
     flex-direction: column-reverse;
+    /* Styles for the article image */
+    /* Styles for the article body */
   }
   .latest_articles .articles2 .article .article_img {
     width: 100%;
@@ -463,8 +570,13 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for the archives section */
+.arsip {
+  /* Media query for screens up to 767px */
+}
 @media (max-width: 767px) {
   .arsip {
+    /* Background and spacing adjustments */
     background: #f5f6f8;
     padding: 20px;
     margin-right: -20px;
@@ -473,10 +585,12 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for the date within the archive */
 .archive_field_date {
   padding: 0 0 6px;
 }
 
+/* Styles for the title of an archive item */
 .archive_title {
   font-size: 16px;
   line-height: 24px;
@@ -490,6 +604,7 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for each individual archive item */
 .archive {
   border-bottom: 1px solid #e5e5e5;
   border-left: 1px solid #e5e5e5;
@@ -498,6 +613,7 @@ body.menu-open .back-to-top {
   padding-top: 24px;
   padding-left: 24px;
   margin-top: 0px;
+  /* First and last child adjustments */
 }
 @media (max-width: 767px) {
   .archive {
@@ -513,7 +629,10 @@ body.menu-open .back-to-top {
   padding-bottom: 10px;
 }
 
+/* Styles for the testimonials images */
 .testimonials_img {
+  /* Set images to span full width */
+  /* Adjust margin for spacing */
   margin: 60px 0;
 }
 .testimonials_img img {
@@ -525,12 +644,22 @@ body.menu-open .back-to-top {
   }
 }
 
+/* Styles for the wrapper containing testimonials */
+.wrapper_testimonials {
+  /* Styles for individual testimonial items */
+}
 .wrapper_testimonials .testimonial {
+  /* Add left and bottom border lines for separation */
   border-left: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
+  /* Add padding to top and bottom */
   padding-bottom: 24px;
   padding-top: 24px;
   padding-left: 20px;
+  /* First item-specific styling */
+  /* Last item-specific styling */
+  /* Styles for the avatar image */
+  /* Styles for the left side of the testimonial */
 }
 @media (max-width: 767px) {
   .wrapper_testimonials .testimonial {
@@ -553,6 +682,8 @@ body.menu-open .back-to-top {
 }
 .wrapper_testimonials .testimonial .testimonials_left {
   padding-left: 10px;
+  /* Testimonial text styles */
+  /* Testimonial user name styles */
 }
 .wrapper_testimonials .testimonial .testimonials_left .testimonials_text {
   font-size: 13px;

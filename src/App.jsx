@@ -1,3 +1,4 @@
+// Import necessary components and functions
 import React, {useState, useEffect} from "react";
 import Header from "./components/header/Header.jsx";
 import Banner from "./components/header/Banner.jsx";
@@ -11,12 +12,17 @@ import Testimonials from "./components/bottom_block/Testimonials.jsx";
 
 import { ApiUrls, fetchData } from './apiService';
 
+// Function to strip HTML tags from a given input
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
 
+// Main App component
 const App = () => {
+    // State variables to manage the visibility of the "Back to Top" button and various content blocks
     const [showBackToTop, setShowBackToTop] = useState(false);
+
+    // Function to scroll to the top of the page smoothly
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -24,6 +30,7 @@ const App = () => {
         });
     };
 
+    // State variables to store fetched data from API endpoints
     const [menuLinks, setMenuLinks] = useState([]);
     const [blockContent1, setBlockContent1] = useState({});
     const [blockContent2, setBlockContent2] = useState({});
@@ -39,6 +46,7 @@ const App = () => {
     const [blockContent12, setBlockContent12] = useState({});
     const [blockContent13, setBlockContent13] = useState([]);
 
+    // useEffect hook to fetch data and set states on component mount
     useEffect(() => {
             fetchData(ApiUrls.menu)
                 .then((data) => {
@@ -124,6 +132,8 @@ const App = () => {
                 })
                 .catch((error) => console.error('Error fetching block content 13:', error));
 
+
+        // Add scroll event listener to update "Back to Top" button visibility
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setShowBackToTop(true);
@@ -132,6 +142,7 @@ const App = () => {
             }
         };
 
+        // Clean up event listener on component unmount
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -139,6 +150,7 @@ const App = () => {
     },[]);
 
 
+    // Return JSX with components and content
     return (
         <>
             <div className={"mainlayout"}>
@@ -211,4 +223,5 @@ const App = () => {
     );
 };
 
+// Export the App component as the default export
 export default App;

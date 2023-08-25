@@ -1,7 +1,12 @@
+// Import necessary components and hooks from React
 import React, { useState } from "react";
+
+// Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+
+// Archives component to display a list of archives
 const Archives = ({ blockContent11 }) => {
     return (
         <div className={"wrapper_archives pad20"}>
@@ -15,4 +20,6 @@ const Archives = ({ blockContent11 }) => {
     );
 };
 
+
+// Export the Archives component as the default export
 export default Archives;

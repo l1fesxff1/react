@@ -1,9 +1,14 @@
+/* Styles for the date in teaser sections */
 .field_date_teaser{
+  /* Lower opacity for a subtle effect */
   opacity: 0.3;
   color: white;
 }
+/* Styles for non-last teaser items */
 .other_teaser_item:not(:last-child){
+  /* Border at the bottom to separate items */
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  /* Special styling for the first item */
   &:first-child{
     @media (max-width: 976px) {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -12,7 +17,9 @@
   }
 }
 @media (max-width: 767px) {
+  /* Styles for important teaser items */
   .important_teaser_item{
+    /* Adjust font size and line height for smaller screens */
     h1{
       font-size: 24px;
       line-height: 32px;
@@ -20,7 +27,9 @@
   }
 }
 @media (max-width: 450px) {
+  /* Styles for other teaser items in small screens */
   .other_teaser_item{
+    /* Reverse column direction for better stacking */
     flex-direction: column-reverse;
   }
 }

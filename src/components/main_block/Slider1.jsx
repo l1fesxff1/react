@@ -1,12 +1,20 @@
+// Import necessary components and styles
 import React from "react";
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+
+// Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+
+// Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+// Slider1 component that displays a slider of items
 const Slider1 = ({ blockContent6 }) => {
+    // Slider settings configuration
     const settings = {
         dots: false,
         arrows: false,
@@ -55,4 +63,5 @@ const Slider1 = ({ blockContent6 }) => {
     );
 };
 
+// Export the Slider1 component as the default export
 export default Slider1;

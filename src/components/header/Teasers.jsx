@@ -1,6 +1,10 @@
+// Import necessary components and hooks from React
 import React, {useState} from "react";
+
+// Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
+// Teasers component that displays important and other teasers
 const Teasers = ({blockContent4, blockContent5}) => {
     return (
         <div className={"teasers gap-5 lg:gap-16 flex lg:flex-row flex-col lg:px-[20px]"}>
@@ -37,4 +41,5 @@ const Teasers = ({blockContent4, blockContent5}) => {
     );
 };
 
+// Export the Teasers component as the default export
 export default Teasers;
