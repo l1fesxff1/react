@@ -9,6 +9,7 @@ import Archives from "./components/bottom_block/Archives.jsx";
 import TestimonialsImg from "./components/bottom_block/TestimonialsImg.jsx";
 import Testimonials from "./components/bottom_block/Testimonials.jsx";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
@@ -38,20 +39,20 @@ const App = () => {
     const [blockContent13, setBlockContent13] = useState([]);
 
 
-    const apiUrlMenu = "http://91.107.217.207/jsonapi/menu_link_content/menu_link_content";
-    const apiUrlBlock1 = "http://91.107.217.207/jsonapi/block_content/basic/d6ee7696-ee2d-47f1-a4ba-c6b6a2ac583c?resourceVersion=id%3A1&include=field_image";
-    const apiUrlBlock2 = "http://91.107.217.207/jsonapi/block_content/social_links/da13c4ff-fea5-48e6-bedb-7ede57c8f29d?resourceVersion=id%3A2&include=field_social_links.field_icon_svg";
-    const apiUrlBlock3 = "http://91.107.217.207/jsonapi/node/page";
-    const apiUrlBlock4 = "http://91.107.217.207/blog-articles-first?_format=json";
-    const apiUrlBlock5 = "http://91.107.217.207/blog-articles-second?_format=json";
-    const apiUrlBlock6 = "http://91.107.217.207/design-tutorials-first?_format=json";
-    const apiUrlBlock7 = "http://91.107.217.207/jsonapi/block_content/w_full_block/cf972415-4ba6-4d47-ae43-11798f4b8e2a?resourceVersion=id%3A3&include=field_image";
-    const apiUrlBlock8 = "http://91.107.217.207/editors-choice?_format=json";
-    const apiUrlBlock9 = "http://91.107.217.207/jsonapi/block_content/w_full_block/121c2905-1aad-4a35-b001-249f99f464e1?resourceVersion=id%3A4&include=field_image";
-    const apiUrlBlock10 = "http://91.107.217.207/latest-articles?_format=json";
-    const apiUrlBlock11 = "http://91.107.217.207/archives?_format=json";
-    const apiUrlBlock12 = "http://91.107.217.207/jsonapi/block_content/basic/07440139-1de0-44ab-98d8-9a7b437245db?resourceVersion=id%3A5&include=field_image";
-    const apiUrlBlock13 = "http://91.107.217.207/testimonials?_format=json";
+    const apiUrlMenu = `${backendUrl}/jsonapi/menu_link_content/menu_link_content`;
+    const apiUrlBlock1 = `${backendUrl}/jsonapi/block_content/basic/d6ee7696-ee2d-47f1-a4ba-c6b6a2ac583c?resourceVersion=id%3A1&include=field_image`;
+    const apiUrlBlock2 = `${backendUrl}/jsonapi/block_content/social_links/da13c4ff-fea5-48e6-bedb-7ede57c8f29d?resourceVersion=id%3A2&include=field_social_links.field_icon_svg`;
+    const apiUrlBlock3 = `${backendUrl}/jsonapi/node/page`;
+    const apiUrlBlock4 = `${backendUrl}/blog-articles-first?_format=json`;
+    const apiUrlBlock5 = `${backendUrl}/blog-articles-second?_format=json`;
+    const apiUrlBlock6 = `${backendUrl}/design-tutorials-first?_format=json`;
+    const apiUrlBlock7 = `${backendUrl}/jsonapi/block_content/w_full_block/cf972415-4ba6-4d47-ae43-11798f4b8e2a?resourceVersion=id%3A3&include=field_image`;
+    const apiUrlBlock8 = `${backendUrl}/editors-choice?_format=json`;
+    const apiUrlBlock9 = `${backendUrl}/jsonapi/block_content/w_full_block/121c2905-1aad-4a35-b001-249f99f464e1?resourceVersion=id%3A4&include=field_image`;
+    const apiUrlBlock10 = `${backendUrl}/latest-articles?_format=json`;
+    const apiUrlBlock11 = `${backendUrl}/archives?_format=json`;
+    const apiUrlBlock12 = `${backendUrl}/jsonapi/block_content/basic/07440139-1de0-44ab-98d8-9a7b437245db?resourceVersion=id%3A5&include=field_image`;
+    const apiUrlBlock13 = `${backendUrl}/testimonials?_format=json`;
 
     useEffect(() => {
 

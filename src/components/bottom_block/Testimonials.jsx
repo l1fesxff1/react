@@ -2,7 +2,7 @@ import React, { useState } from "react";
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
-const webUrl = 'http://91.107.217.207';
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const parseAttribute = (string, tag, attribute) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(string, 'text/html');
@@ -14,7 +14,7 @@ const Testimonials = ({ blockContent13 }) => {
         <div className={"wrapper_testimonials pad20"}>
             {blockContent13.map((item, index) => (
                 <div className={"flex testimonial"} key={index}>
-                    <img className={"testimonials_avatar"} src={webUrl + parseAttribute(item.field_image, 'img', 'src')} alt={parseAttribute(item.field_image, `img`, `alt`)} />
+                    <img className={"testimonials_avatar"} src={`${backendUrl}${parseAttribute(item.field_image, 'img', 'src')}`} alt={parseAttribute(item.field_image, `img`, `alt`)} />
                     <div className={"testimonials_left"}>
                         <p className={"testimonials_text"}>{stripTags(item.body)}</p>
                         <p className={"testimonials_user before:content-['@']"}>{item.field_remember}</p>

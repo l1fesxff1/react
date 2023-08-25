@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Teasers = ({blockContent4, blockContent5}) => {
     return (
@@ -6,7 +7,7 @@ const Teasers = ({blockContent4, blockContent5}) => {
             <div className={"important_teaser lg:w-1/2"}>
                 {Object.keys(blockContent4).length > 0 && (
                     <div className={"important_teaser_item"}>
-                        <img className={""} src={`http://91.107.217.207/${blockContent4.field_image_1}`}
+                        <img className={""} src={`${backendUrl}${blockContent4.field_image_1}`}
                              alt={blockContent4.title_1}/>
                         <p className={"field_date field_date_teaser pt-[20px] pb-[10px]"}>{blockContent4.field_date}</p>
                         <h1 className={"text-white text-[32px] leading-[42px] opacity-80 mb-[16px] font-semibold tracking-[0px]"}
@@ -20,7 +21,7 @@ const Teasers = ({blockContent4, blockContent5}) => {
                 {blockContent5.map((item, index) => (
                     <div className={"other_teaser_item flex w lg:flex-row flex-row-reverse justify-between mt-[32px] gap-5 first:mt-[0px] pb-[32px] "} key={index}>
                         <div className={"max-w-[248px] h-auto"}>
-                            <img src={`http://91.107.217.207/${item.field_image_1}`}
+                            <img src={`${backendUrl}${item.field_image_1}`}
                                  alt={item.title_1} height={"152px"} className={"h-auto w-full"}/>
                         </div>
                         <div className={"other_teaser_item_right"}>

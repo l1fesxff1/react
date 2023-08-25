@@ -2,7 +2,7 @@ import React from "react";
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
-const webUrl = 'http://91.107.217.207';
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const TestimonialsImg = ({blockContent12}) => {
     return (
@@ -11,7 +11,7 @@ const TestimonialsImg = ({blockContent12}) => {
                 <div className={"testimonials_img pad20"}>
                         <img
                             className=""
-                            src={webUrl + blockContent12.field_image.uri.url}
+                            src={`${backendUrl}${blockContent12.field_image.uri.url}`}
                             alt={blockContent12.field_image.meta.alt}
                         />
                 </div>

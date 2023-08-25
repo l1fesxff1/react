@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
-const webUrl = 'http://91.107.217.207';
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Header = ({menuLinks, blockContent1, blockContent2}) => {
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
@@ -17,7 +16,7 @@ const Header = ({menuLinks, blockContent1, blockContent2}) => {
                         <div>
                             <img
                                 className="logoimg w-10"
-                                src={webUrl + blockContent1.field_image.uri.url}
+                                src={`${backendUrl}${blockContent1.field_image.uri.url}`}
                                 alt={blockContent1.field_image.meta.alt}
                             />
                         </div>
@@ -45,7 +44,7 @@ const Header = ({menuLinks, blockContent1, blockContent2}) => {
                                     <a className="sociallink" href={socialLink.field_link.uri}>
                                         <img
                                             className="social_link_icon opacity-50 hover:opacity-100"
-                                            src={webUrl + socialLink.field_icon_svg.uri.url}
+                                            src={`${backendUrl}${socialLink.field_icon_svg.uri.url}`}
                                             alt={socialLink.field_icon_svg.meta.alt}
                                         />
                                     </a>

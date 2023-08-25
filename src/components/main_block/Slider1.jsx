@@ -5,6 +5,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const Slider1 = ({ blockContent6 }) => {
     const settings = {
         dots: false,
@@ -41,7 +42,7 @@ const Slider1 = ({ blockContent6 }) => {
                 {blockContent6.map((item, index) => (
                     <div key={index} className={"first_slider_item p-[10px]"}>
                         <img className={"slider_image"}
-                            src={`http://91.107.217.207/${item.field_image_1}`}
+                            src={`${backendUrl}${item.field_image_1}`}
                             alt={stripTags(item.title_1)}
                         />
                         {item.field_date && (<p className={"slider_field_date field_date"}>{item.field_date}</p>)}

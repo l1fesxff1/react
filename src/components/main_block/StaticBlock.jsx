@@ -2,6 +2,7 @@ import React from "react";
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
 }
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const StaticBlock = ({blockContent7}) => {
     return (
         <div className={"wrapper_static_block"}>
@@ -15,7 +16,7 @@ const StaticBlock = ({blockContent7}) => {
                     <div className={"static_block_left lg:w-1/2"}>
                         <img
                             className="static_block_img"
-                            src={`http://91.107.217.207/${blockContent7.field_image.uri.url}`}
+                            src={`${backendUrl}${blockContent7.field_image.uri.url}`}
                             alt={blockContent7.field_image.meta.alt}
                         />
                     </div>
