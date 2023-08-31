@@ -1,6 +1,3 @@
-// Import necessary components and hooks from React
-import React, {useState} from "react";
-
 // Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 

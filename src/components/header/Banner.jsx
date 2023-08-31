@@ -1,6 +1,3 @@
-// Import the necessary components and functions from React
-import React, { useState } from "react";
-
 // Function to strip HTML tags from the given input
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');

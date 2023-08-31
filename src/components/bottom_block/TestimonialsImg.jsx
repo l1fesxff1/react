@@ -1,11 +1,3 @@
-// Import necessary components and hooks from React
-import React from "react";
-
-// Function to remove HTML tags from a string
-function stripTags(input) {
-    return input.replace(/<[^>]+>/g, '');
-}
-
 // Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
