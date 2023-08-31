@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Function to strip HTML tags from the given input
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
@@ -19,6 +20,12 @@ const Banner = ({ blockContent3 }) => {
         </div>
     );
 };
-
+Banner.propTypes = {
+    blockContent3: PropTypes.shape({
+        body: PropTypes.shape({
+            value: PropTypes.string.isRequired,
+        }),
+    }),
+};
 // Export the Banner component as the default export
 export default Banner;

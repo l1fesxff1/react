@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -17,6 +18,17 @@ const TestimonialsImg = ({blockContent12}) => {
         </div>
     );
 };
-
+TestimonialsImg.propTypes = {
+    blockContent12: PropTypes.shape({
+        field_image: PropTypes.shape({
+            uri: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+            }),
+            meta: PropTypes.shape({
+                alt: PropTypes.string.isRequired,
+            }),
+        }),
+    }),
+};
 // Export the TestimonialsImg component as the default export
 export default TestimonialsImg;

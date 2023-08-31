@@ -1,4 +1,5 @@
 // Import necessary components and hooks from React
+import PropTypes from 'prop-types';
 import {useState} from "react";
 
 // Get the backend URL from the environment variables
@@ -108,6 +109,37 @@ const Header = ({menuLinks, blockContent1, blockContent2}) => {
         </header>
     );
 };
-
+Header.propTypes = {
+    menuLinks: PropTypes.array.isRequired,
+    blockContent1: PropTypes.shape({
+        field_image: PropTypes.shape({
+            uri: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+            }),
+            meta: PropTypes.shape({
+                alt: PropTypes.string.isRequired,
+            }),
+        }),
+    }),
+    blockContent2: PropTypes.shape({
+        field_social_links: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                field_link: PropTypes.shape({
+                    uri: PropTypes.string.isRequired,
+                    title: PropTypes.string.isRequired,
+                }),
+                field_icon_svg: PropTypes.shape({
+                    uri: PropTypes.shape({
+                        url: PropTypes.string.isRequired,
+                    }),
+                    meta: PropTypes.shape({
+                        alt: PropTypes.string.isRequired,
+                    }),
+                }),
+            })
+        ),
+    }),
+};
 // Export the Header component as the default export
 export default Header;

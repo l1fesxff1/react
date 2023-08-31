@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 // Function to remove HTML tags from a string
 function stripTags(input) {
@@ -30,5 +31,16 @@ const LatestArticles = ({ blockContent10 }) => {
     );
 };
 
+LatestArticles.propTypes = {
+    blockContent10: PropTypes.arrayOf(
+        PropTypes.shape({
+            field_image_1: PropTypes.string.isRequired,
+            title_1: PropTypes.string.isRequired,
+            field_date: PropTypes.string,
+            title: PropTypes.string.isRequired,
+            body: PropTypes.string,
+        })
+    ).isRequired,
+};
 // Export the LatestArticles component as the default export
 export default LatestArticles;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
@@ -30,6 +31,14 @@ const Testimonials = ({ blockContent13 }) => {
         </div>
     );
 };
-
+Testimonials.propTypes = {
+    blockContent13: PropTypes.arrayOf(
+        PropTypes.shape({
+            body: PropTypes.string.isRequired,
+            field_image: PropTypes.string.isRequired,
+            field_remember: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 // Export the Testimonials component as the default export
 export default Testimonials;

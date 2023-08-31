@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Function to remove HTML tags from a string
 function stripTags(input) {
     return input.replace(/<[^>]+>/g, '');
@@ -29,6 +30,25 @@ const StaticBlock = ({blockContent7}) => {
         </div>
     );
 };
-
+StaticBlock.propTypes = {
+    blockContent7: PropTypes.shape({
+        field_title: PropTypes.string.isRequired,
+        body: PropTypes.shape({
+            processed: PropTypes.string.isRequired,
+        }),
+        field_link: PropTypes.shape({
+            uri: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+        }),
+        field_image: PropTypes.shape({
+            uri: PropTypes.shape({
+                url: PropTypes.string.isRequired,
+            }),
+            meta: PropTypes.shape({
+                alt: PropTypes.string.isRequired,
+            }),
+        }),
+    }),
+};
 // Export the StaticBlock component as the default export
 export default StaticBlock;

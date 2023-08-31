@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Get the backend URL from the environment variables
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -37,6 +38,19 @@ const Teasers = ({blockContent4, blockContent5}) => {
         </div>
     );
 };
-
+Teasers.propTypes = {
+    blockContent4: PropTypes.shape({
+        field_image_1: PropTypes.string,
+        title_1: PropTypes.string,
+        field_date: PropTypes.string,
+        title: PropTypes.string,
+        body: PropTypes.string,
+    }),
+    blockContent5: PropTypes.arrayOf(
+        PropTypes.shape({
+            map: PropTypes.string,
+        })
+    ),
+};
 // Export the Teasers component as the default export
 export default Teasers;

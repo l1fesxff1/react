@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // Import necessary components and styles
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -61,6 +62,15 @@ const Slider1 = ({ blockContent6 }) => {
         </div>
     );
 };
-
+Slider1.propTypes = {
+    blockContent6: PropTypes.arrayOf(
+        PropTypes.shape({
+            field_image_1: PropTypes.string.isRequired,
+            title_1: PropTypes.string.isRequired,
+            field_date: PropTypes.string,
+            body: PropTypes.string,
+        })
+    ).isRequired,
+};
 // Export the Slider1 component as the default export
 export default Slider1;
